@@ -5,8 +5,8 @@ const app=express.Router()
 
 app.get("/",async(req,res)=>
 {
-    const {limit=10,page=1}=req.query
-    let pilot=await Pilot.find().limit(limit).skip(page*limit)      
+    const {limit=10}=req.query
+    let pilot=await Pilot.find().limit(limit)  
     res.send(pilot) 
 })
 
