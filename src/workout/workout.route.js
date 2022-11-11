@@ -1,12 +1,12 @@
 const express=require("express")
-const MealPlans=require("./mealPlans.model")
+const Workouts=require("./workout.model")
 
 const app=express.Router()
 
 app.get("/",async(req,res)=>
 {
-    let meal=await MealPlans.find()      
-    res.send(meal) 
+    let workout=await Workouts.find()     
+    res.send(workout) 
 })
 
 

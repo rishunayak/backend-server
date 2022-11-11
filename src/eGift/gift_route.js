@@ -1,12 +1,12 @@
 const express=require("express")
-const MealPlans=require("./mealPlans.model")
+const Gift=require("./gift_model")
 
 const app=express.Router()
 
 app.get("/",async(req,res)=>
 {
-    let meal=await MealPlans.find()      
-    res.send(meal) 
+    let gift=await Gift.find()      
+    res.send(gift) 
 })
 
 
