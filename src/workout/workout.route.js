@@ -5,7 +5,10 @@ const app=express.Router()
 
 app.get("/",async(req,res)=>
 {
-    let workout=await Workouts.find()     
+    const {limit=10,page=1}=req.query
+
+    let workout=await Workouts.find().limit(limit).skip(page*limit)     
+
     res.send(workout) 
 })
 

@@ -13,16 +13,18 @@ const mealplanRoute=require("./meal-plans/mealPlans.route")
 const fbRotue=require("./fb_plus/fb_plus.route")
 const giftRoute=require("./eGift/gift_route")
 const workoutRoute=require("./workout/workout.route")
+const pilotRoute=require("./pilot/pilot.route")
 const app=express()
 app.use(express.json())
 app.use(cors())
 app.use("/users",userRoute)
 app.use("/plans",planRoute)
 app.use("/cart",cartRoute)
-app.use("/mealplans",mealplanRoute);
+app.use("/mealplans",mealplanRoute); 
 app.use("/fb_plus",fbRotue)
 app.use("/gift",giftRoute)
 app.use("/workouts",workoutRoute)
+app.use("/pilot",pilotRoute);
 
 app.get("/",(req,res)=>
 {

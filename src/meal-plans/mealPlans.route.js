@@ -5,7 +5,8 @@ const app=express.Router()
 
 app.get("/",async(req,res)=>
 {
-    let meal=await MealPlans.find()      
+    const {limit=10,page=1}=req.query
+    let meal=await MealPlans.find().limit(limit).skip(page*limit)      
     res.send(meal) 
 })
 
