@@ -3,6 +3,12 @@ const Users = require("./user.model")
 
 const app=express.Router()
 
+
+
+
+
+
+
 app.post("/login",async(req,res)=>
 {
     const {username,password}=req.body;
@@ -13,7 +19,7 @@ app.post("/login",async(req,res)=>
         if(users.password===password)
         {
             const token=username+"#"+password
-            res.send(token)
+            res.send(users)
         }
         else
         {
