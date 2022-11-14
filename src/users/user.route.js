@@ -43,7 +43,7 @@ app.post("/signup",async(req,res)=>
      
      if(exitingEmail.email==email || exitingUsername.username===username )
      {
-        res.status(201).send("Email or User Name Already Exist")
+        res.send("Email or User Name Already Exist")
      }
 
       let user=await Users.create({...req.body}) 
